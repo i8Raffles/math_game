@@ -13,12 +13,7 @@ class Player
     puts "#{name}: #{question}"
     answer = gets.chomp.to_i
 
-    if question.correct?(answer)
-      puts "#{name}: YES! You are correct!"
-    else
-      puts "#{name}: Seriously? No!"
-      lose_life
-    end
+    question.correct?(answer) ? puts("#{name}: YES! You are correct!") : (puts "#{name}: Seriously? No!"; lose_life)
   end
   
   def lose_life
